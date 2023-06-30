@@ -1,5 +1,10 @@
+'use-client'
+
+import { NavBar } from 'components/Navbar'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
+import 'styles/global.css'
+import { ThemeProvider } from 'next-themes'
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +20,10 @@ function App({ Component, pageProps }: AppProps) {
           content="A simple project starter to work with Typescript, React, NextJS and Styled Components"
         />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider enableSystem={true} attribute="class">
+        <NavBar />
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }

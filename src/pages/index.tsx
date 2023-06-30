@@ -1,3 +1,11 @@
+import { AboutSection } from 'components/About'
+import { Section } from 'components/Section'
+
 export default function Home() {
-  return <div>oi</div>
+  return (
+    <main>
+      <Section />
+      <AboutSection />
+    </main>
+  )
 }
